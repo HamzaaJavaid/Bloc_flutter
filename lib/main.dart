@@ -13,6 +13,12 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+  InfoData info1 = InfoData(12, "In Progress");
+  InfoData info2 = InfoData(13, "In Progress");
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,12 +27,9 @@ class _MyAppState extends State<MyApp> {
 
 
 
-          InfoData info1 = InfoData(12, "In Progress");
-          InfoData info2 = InfoData(13, "In Progress");
 
-          print(info1.hashCode);
-          print(info2.hashCode);
-          print(info2==info2);
+          setState(() {
+          });
 
         },
         child: Icon(Icons.adb_sharp , color: Colors.green,),
@@ -35,10 +38,10 @@ class _MyAppState extends State<MyApp> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Hash Code for 1st Instance :- "),
-            Text("Hash Code for 2nd Instance :- "),
+            Text("Hash Code for 1st Instance :- ${info1.hashCode}"),
+            Text("Hash Code for 2nd Instance :- ${info2.hashCode}"),
             SizedBox(height: 10,),
-            Text("ARE BOTH INSTANCE EQUAL ? "),
+            Text("ARE BOTH INSTANCE EQUAL ? ${info1==info2}"),
 
 
           ],
