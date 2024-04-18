@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:equatable/equatable.dart';
 
 void main(){
   runApp(MaterialApp(home: MyApp(),));
@@ -15,7 +16,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
 
   InfoData info1 = InfoData(12, "In Progress");
-  InfoData info2 = InfoData(13, "In Progress");
+  InfoData info2 = InfoData(12, "In Progress");
 
 
 
@@ -52,11 +53,19 @@ class _MyAppState extends State<MyApp> {
 }
 
 
-class InfoData{
+class InfoData extends Equatable{
 
   double id;
   String status;
 
   InfoData(this.id , this.status);
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [id , status];
+
+
+
+
 
 }
